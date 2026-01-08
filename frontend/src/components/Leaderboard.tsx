@@ -19,7 +19,7 @@ export function Leaderboard({ data, onExport }: LeaderboardProps) {
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-2">
           <Trophy className="w-5 h-5 text-yellow-500" />
-          <h3 className="text-lg font-semibold text-gray-900">使用排行榜</h3>
+          <h3 className="text-lg font-semibold text-gray-100">使用排行榜</h3>
         </div>
         {onExport && (
           <button
@@ -36,7 +36,7 @@ export function Leaderboard({ data, onExport }: LeaderboardProps) {
         {data.map((user, index) => (
           <div
             key={user.id}
-            className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-50 transition-colors"
+            className="flex items-center gap-4 p-3 rounded-lg hover:bg-gray-700 transition-colors"
           >
             <div className="flex-shrink-0 w-8 flex justify-center">
               {getRankBadge(index + 1)}
@@ -47,28 +47,28 @@ export function Leaderboard({ data, onExport }: LeaderboardProps) {
             </div>
 
             <div className="flex-1 min-w-0">
-              <div className="font-medium text-gray-900 truncate">{user.name}</div>
-              <div className="text-sm text-gray-500 truncate">{user.email}</div>
+              <div className="font-medium text-gray-100 truncate">{user.name}</div>
+              <div className="text-sm text-gray-400 truncate">{user.email}</div>
             </div>
 
             <div className="flex items-center gap-6 text-sm">
               <div className="text-center">
-                <div className="font-semibold text-gray-900">{user.session_count}</div>
-                <div className="text-gray-500">会话</div>
+                <div className="font-semibold text-gray-100">{user.session_count}</div>
+                <div className="text-gray-400">会话</div>
               </div>
               <div className="text-center">
-                <div className="font-semibold text-gray-900">{user.active_days}</div>
-                <div className="text-gray-500">活跃天</div>
+                <div className="font-semibold text-gray-100">{user.active_days}</div>
+                <div className="text-gray-400">活跃天</div>
               </div>
               <div className="text-center">
-                <div className="font-semibold text-green-600">
+                <div className="font-semibold text-green-400">
                   +{(user.ai_lines_accepted || 0).toLocaleString()}
                 </div>
-                <div className="text-gray-500">AI行数</div>
+                <div className="text-gray-400">AI行数</div>
               </div>
-              <div className="flex items-center gap-1 px-2 py-1 bg-gray-100 rounded-md">
-                <Bot className="w-3 h-3 text-gray-500" />
-                <span className="text-xs font-medium text-gray-600">
+              <div className="flex items-center gap-1 px-2 py-1 bg-gray-700 rounded-md">
+                <Bot className="w-3 h-3 text-gray-400" />
+                <span className="text-xs font-medium text-gray-300">
                   {user.favorite_model?.replace('claude-3-', '').replace('gpt-', 'GPT-') || '-'}
                 </span>
               </div>
@@ -77,7 +77,7 @@ export function Leaderboard({ data, onExport }: LeaderboardProps) {
         ))}
 
         {data.length === 0 && (
-          <div className="text-center py-8 text-gray-500">
+          <div className="text-center py-8 text-gray-400">
             暂无数据
           </div>
         )}

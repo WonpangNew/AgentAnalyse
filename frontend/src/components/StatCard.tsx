@@ -12,11 +12,11 @@ interface StatCardProps {
 }
 
 const colorClasses = {
-  blue: 'bg-blue-50 text-blue-600',
-  green: 'bg-green-50 text-green-600',
-  purple: 'bg-purple-50 text-purple-600',
-  orange: 'bg-orange-50 text-orange-600',
-  pink: 'bg-pink-50 text-pink-600',
+  blue: 'bg-blue-500/20 text-blue-400',
+  green: 'bg-green-500/20 text-green-400',
+  purple: 'bg-purple-500/20 text-purple-400',
+  orange: 'bg-orange-500/20 text-orange-400',
+  pink: 'bg-pink-500/20 text-pink-400',
 };
 
 export function StatCard({
@@ -38,22 +38,22 @@ export function StatCard({
         {exportType && onExport && (
           <button
             onClick={() => onExport(exportType)}
-            className="opacity-0 group-hover:opacity-100 p-1.5 hover:bg-gray-100 rounded transition-all"
+            className="opacity-0 group-hover:opacity-100 p-1.5 hover:bg-gray-700 rounded transition-all"
             title="导出数据"
           >
-            <Download className="w-4 h-4 text-gray-500" />
+            <Download className="w-4 h-4 text-gray-400" />
           </button>
         )}
       </div>
 
       <div className="mt-4">
-        <h3 className="text-sm font-medium text-gray-500">{title}</h3>
+        <h3 className="text-sm font-medium text-gray-400">{title}</h3>
         <div className="flex items-baseline gap-2 mt-1">
-          <span className="text-2xl font-bold text-gray-900">{value}</span>
+          <span className="text-2xl font-bold text-gray-100">{value}</span>
           {trend !== undefined && (
             <span
               className={`flex items-center text-sm font-medium ${
-                trend >= 0 ? 'text-green-600' : 'text-red-600'
+                trend >= 0 ? 'text-green-400' : 'text-red-400'
               }`}
             >
               {trend >= 0 ? (

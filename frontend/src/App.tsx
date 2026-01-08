@@ -17,6 +17,7 @@ import { WorkCategoryChart } from './components/charts/WorkCategoryChart';
 import { Leaderboard } from './components/Leaderboard';
 import { RepositoryTable } from './components/RepositoryTable';
 import { MessageStats } from './components/MessageStats';
+import { ParticleBackground } from './components/ParticleBackground';
 import {
   getOverviewStats,
   getDailyTrend,
@@ -99,9 +100,11 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header onExport={handleExportAll} onRefresh={fetchData} loading={loading} />
-      <FilterBar filters={filters} onFilterChange={setFilters} />
+    <div className="min-h-screen bg-gray-900 relative">
+      <ParticleBackground />
+      <div className="relative z-10">
+        <Header onExport={handleExportAll} onRefresh={fetchData} loading={loading} />
+        <FilterBar filters={filters} onFilterChange={setFilters} />
 
       <main className="p-6 max-w-7xl mx-auto">
         {/* 概览统计卡片 */}
@@ -187,13 +190,14 @@ function App() {
         </div>
       </main>
 
-      {/* 页脚 */}
-      <footer className="border-t border-gray-200 bg-white py-4 px-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-sm text-gray-500">
-          <span>Agent Analytics Dashboard</span>
-          <span>数据更新于 {format(new Date(), 'yyyy-MM-dd HH:mm')}</span>
-        </div>
-      </footer>
+        {/* 页脚 */}
+        <footer className="border-t border-gray-700 bg-gray-800 py-4 px-6">
+          <div className="max-w-7xl mx-auto flex items-center justify-between text-sm text-gray-400">
+            <span>Agent Analytics Dashboard</span>
+            <span>数据更新于 {format(new Date(), 'yyyy-MM-dd HH:mm')}</span>
+          </div>
+        </footer>
+      </div>
     </div>
   );
 }
