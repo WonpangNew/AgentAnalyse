@@ -27,8 +27,8 @@ export function TrendChart({ data, onExport }: TrendChartProps) {
     <div className="card">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h3 className="text-lg font-semibold text-gray-900">每日使用趋势</h3>
-          <p className="text-sm text-gray-500">活跃用户、会话和编辑数量</p>
+          <h3 className="text-lg font-semibold text-gray-100">每日使用趋势</h3>
+          <p className="text-sm text-gray-400">活跃用户、会话和编辑数量</p>
         </div>
         {onExport && (
           <button
@@ -58,27 +58,28 @@ export function TrendChart({ data, onExport }: TrendChartProps) {
                 <stop offset="95%" stopColor="#10b981" stopOpacity={0} />
               </linearGradient>
             </defs>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
+            <CartesianGrid strokeDasharray="3 3" stroke="#374151" />
             <XAxis
               dataKey="date"
-              tick={{ fontSize: 12, fill: '#6b7280' }}
+              tick={{ fontSize: 12, fill: '#9ca3af' }}
               tickLine={false}
-              axisLine={{ stroke: '#e5e7eb' }}
+              axisLine={{ stroke: '#374151' }}
             />
             <YAxis
-              tick={{ fontSize: 12, fill: '#6b7280' }}
+              tick={{ fontSize: 12, fill: '#9ca3af' }}
               tickLine={false}
-              axisLine={{ stroke: '#e5e7eb' }}
+              axisLine={{ stroke: '#374151' }}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: 'white',
-                border: '1px solid #e5e7eb',
+                backgroundColor: '#1f2937',
+                border: '1px solid #374151',
                 borderRadius: '8px',
-                boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
+                boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.3)',
+                color: '#f3f4f6',
               }}
             />
-            <Legend />
+            <Legend wrapperStyle={{ color: '#9ca3af' }} />
             <Area
               type="monotone"
               dataKey="active_users"

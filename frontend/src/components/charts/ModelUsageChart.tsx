@@ -28,8 +28,8 @@ export function ModelUsageChart({ data, onExport }: ModelUsageChartProps) {
     <div className="card">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h3 className="text-lg font-semibold text-gray-900">模型使用统计</h3>
-          <p className="text-sm text-gray-500">各模型的会话和消息数量</p>
+          <h3 className="text-lg font-semibold text-gray-100">模型使用统计</h3>
+          <p className="text-sm text-gray-400">各模型的会话和消息数量</p>
         </div>
         {onExport && (
           <button
@@ -45,27 +45,28 @@ export function ModelUsageChart({ data, onExport }: ModelUsageChartProps) {
       <div className="h-64">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart data={chartData} layout="vertical">
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" horizontal={false} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#374151" horizontal={false} />
             <XAxis
               type="number"
-              tick={{ fontSize: 12, fill: '#6b7280' }}
+              tick={{ fontSize: 12, fill: '#9ca3af' }}
               tickLine={false}
-              axisLine={{ stroke: '#e5e7eb' }}
+              axisLine={{ stroke: '#374151' }}
             />
             <YAxis
               type="category"
               dataKey="name"
-              tick={{ fontSize: 12, fill: '#6b7280' }}
+              tick={{ fontSize: 12, fill: '#9ca3af' }}
               tickLine={false}
-              axisLine={{ stroke: '#e5e7eb' }}
+              axisLine={{ stroke: '#374151' }}
               width={80}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: 'white',
-                border: '1px solid #e5e7eb',
+                backgroundColor: '#1f2937',
+                border: '1px solid #374151',
                 borderRadius: '8px',
-                boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
+                boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.3)',
+                color: '#f3f4f6',
               }}
               formatter={(value: number, name: string) => [
                 value.toLocaleString(),

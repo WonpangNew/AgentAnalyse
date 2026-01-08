@@ -54,11 +54,11 @@ export function FilterBar({ filters, onFilterChange }: FilterBarProps) {
   };
 
   return (
-    <div className="bg-white border-b border-gray-200 px-6 py-4">
+    <div className="bg-gray-800 border-b border-gray-700 px-6 py-4">
       <div className="flex flex-wrap items-center gap-4">
         {/* 日期范围选择 */}
         <div className="flex items-center gap-2">
-          <Calendar className="w-4 h-4 text-gray-500" />
+          <Calendar className="w-4 h-4 text-gray-400" />
           <div className="flex gap-1">
             {DATE_RANGES.map((range) => (
               <button
@@ -66,8 +66,8 @@ export function FilterBar({ filters, onFilterChange }: FilterBarProps) {
                 onClick={() => handleRangeChange(range.days)}
                 className={`px-3 py-1.5 text-sm rounded-lg transition-colors ${
                   selectedRange === range.days
-                    ? 'bg-primary-100 text-primary-700 font-medium'
-                    : 'text-gray-600 hover:bg-gray-100'
+                    ? 'bg-primary-600 text-white font-medium'
+                    : 'text-gray-300 hover:bg-gray-700'
                 }`}
               >
                 {range.label}
@@ -76,11 +76,11 @@ export function FilterBar({ filters, onFilterChange }: FilterBarProps) {
           </div>
         </div>
 
-        <div className="h-6 w-px bg-gray-200" />
+        <div className="h-6 w-px bg-gray-700" />
 
         {/* 团队筛选 */}
         <div className="flex items-center gap-2">
-          <Building2 className="w-4 h-4 text-gray-500" />
+          <Building2 className="w-4 h-4 text-gray-400" />
           <select
             value={filters.teamId || ''}
             onChange={(e) => handleTeamChange(e.target.value)}
@@ -97,7 +97,7 @@ export function FilterBar({ filters, onFilterChange }: FilterBarProps) {
 
         {/* 用户筛选 */}
         <div className="flex items-center gap-2">
-          <Users className="w-4 h-4 text-gray-500" />
+          <Users className="w-4 h-4 text-gray-400" />
           <select
             value={filters.userId || ''}
             onChange={(e) => handleUserChange(e.target.value)}
@@ -113,7 +113,7 @@ export function FilterBar({ filters, onFilterChange }: FilterBarProps) {
         </div>
 
         {/* 日期显示 */}
-        <div className="ml-auto text-sm text-gray-500">
+        <div className="ml-auto text-sm text-gray-400">
           {filters.startDate} 至 {filters.endDate}
         </div>
       </div>

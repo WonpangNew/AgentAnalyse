@@ -31,8 +31,8 @@ export function WorkCategoryChart({ data, onExport }: WorkCategoryChartProps) {
     <div className="card">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h3 className="text-lg font-semibold text-gray-900">工作类型分布</h3>
-          <p className="text-sm text-gray-500">按工作类型分类的编辑统计</p>
+          <h3 className="text-lg font-semibold text-gray-100">工作类型分布</h3>
+          <p className="text-sm text-gray-400">按工作类型分类的编辑统计</p>
         </div>
         {onExport && (
           <button
@@ -64,10 +64,11 @@ export function WorkCategoryChart({ data, onExport }: WorkCategoryChartProps) {
               </Pie>
               <Tooltip
                 contentStyle={{
-                  backgroundColor: 'white',
-                  border: '1px solid #e5e7eb',
+                  backgroundColor: '#1f2937',
+                  border: '1px solid #374151',
                   borderRadius: '8px',
-                  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)',
+                  boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.3)',
+                  color: '#f3f4f6',
                 }}
                 formatter={(value: number) => [
                   `${value} (${Math.round((value / total) * 100)}%)`,
@@ -86,13 +87,13 @@ export function WorkCategoryChart({ data, onExport }: WorkCategoryChartProps) {
                   className="w-3 h-3 rounded-full"
                   style={{ backgroundColor: COLORS[index % COLORS.length] }}
                 />
-                <span className="text-sm text-gray-700">{item.name}</span>
+                <span className="text-sm text-gray-300">{item.name}</span>
               </div>
               <div className="text-right">
-                <span className="text-sm font-medium text-gray-900">
+                <span className="text-sm font-medium text-gray-100">
                   {item.count}
                 </span>
-                <span className="text-xs text-gray-500 ml-2">
+                <span className="text-xs text-gray-400 ml-2">
                   AI {item.aiPercentage}%
                 </span>
               </div>
